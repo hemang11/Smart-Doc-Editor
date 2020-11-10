@@ -32,14 +32,14 @@ app.get('/room/:id',(req,res)=>{
 })
 
 app.get('/room',(req,res)=>{
-  username = req.body.username
+  username = req.query.username
   res.redirect(`/room/${uuidV4()}`)
 })
 
-app.post('/room',(req,res)=>{
-  username = req.body.username
-  roomID = req.body.roomID;
-  res.redirect(`/room/${roomID}`);
+app.get('/join',(req,res)=>{
+  username = req.query.username
+  url = req.query.url;
+  res.redirect(`${url}`);
 })
 
 // Socket

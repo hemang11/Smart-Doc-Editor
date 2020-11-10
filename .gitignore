@@ -2,3 +2,4 @@
 **/dist
 .vscode
 README.md
+package-lock.json

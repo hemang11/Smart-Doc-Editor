@@ -1,4 +1,4 @@
-/* eslint-env browser */
+// As Import Statements do not work in frontEnd so we have to use Webpack
 import * as Y from 'yjs'
 import { WebsocketProvider } from 'y-websocket'
 import { QuillBinding } from 'y-quill'
@@ -38,7 +38,7 @@ window.addEventListener('load', () => {
 
   var toolbarOptions = [
     ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-    ['blockquote', 'code-block'],
+    ['blockquote', 'image','code-block'],
   
     [{ 'header': 1 }, { 'header': 2 }],               // custom button values
     [{ 'list': 'ordered'}, { 'list': 'bullet' }],
@@ -58,16 +58,18 @@ window.addEventListener('load', () => {
     modules: {
       cursors : true,
       toolbar:toolbarOptions,
+      // readOnly:true,
       history: {
         userOnly: true
       }
+      //scrollingContainer:false
     },
     placeholder: 'Start collaborating...',
     theme: 'snow' // or 'bubble'
   })   
 
   const binding = new QuillBinding(type, editor, provider.awareness)
-  //console.log(provider.awareness);
+
   if(!username)username='Anonymous';
   provider.awareness.setLocalStateField('user', {
     name: `${username}`,

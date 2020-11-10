@@ -1,6 +1,19 @@
+*{
+  box-sizing: border-box;
+  margin:0px;
+  padding: 0px;
+}
+
 #editor {
-  min-height: 500px;
+  width:80vw;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+  margin-left:20%;
+  margin-top:2%;
+  min-height: 90vh;
+  width:800px;
+  /* overflow-y: scroll; */
 }
-.ql-toolbar{
-width:100%;
-}
+/* This is coming from DOM */
+/* .ql-toolbar{
+    height:15px
+} */
